@@ -1,0 +1,51 @@
+[
+  {
+    "year": 2025,
+    "projectedRelativeSeaLevelRiseInches": 5.0,
+    "floodFrequencyMultiplier": 1.5,
+    "scenario": "Intermediate-High",
+    "notes": "Minor flooding becoming more frequent."
+  },
+  {
+    "year": 2030,
+    "projectedRelativeSeaLevelRiseInches": 8.0,
+    "floodFrequencyMultiplier": 2.5,
+    "scenario": "Intermediate-High",
+    "notes": "Minor flooding >10x more often by 2050."
+  },
+  {
+    "year": 2035,
+    "projectedRelativeSeaLevelRiseInches": 11.0,
+    "floodFrequencyMultiplier": 4.0,
+    "scenario": "Intermediate-High",
+    "notes": "Moderate flooding more frequent than current minor."
+  },
+  {
+    "year": 2040,
+    "projectedRelativeSeaLevelRiseInches": 14.0,
+    "floodFrequencyMultiplier": 6.0,
+    "scenario": "Intermediate-High",
+    "notes": "Major flooding 5x more often by 2050."
+  },
+  {
+    "year": 2045,
+    "projectedRelativeSeaLevelRiseInches": 17.0,
+    "floodFrequencyMultiplier": 8.0,
+    "scenario": "Intermediate-High",
+    "notes": "Increased storm surge severity."
+  },
+  {
+    "year": 2050,
+    "projectedRelativeSeaLevelRiseInches": 18.0,
+    "floodFrequencyMultiplier": 10.0,
+    "scenario": "Intermediate-High",
+    "notes": "Tropical storms/hurricanes more intense. (Used average of 14-18 inches)"
+  },
+  {
+    "year": 2055,
+    "projectedRelativeSeaLevelRiseInches": 21.0,
+    "floodFrequencyMultiplier": 13.0,
+    "scenario": "Intermediate-High",
+    "notes": "Continued increase in frequency and intensity. (Used mid-point of 19-23 inches)"
+  }
+]

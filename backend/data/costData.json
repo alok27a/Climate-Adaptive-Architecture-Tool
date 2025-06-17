@@ -1,0 +1,102 @@
+[
+  {
+    "item": "Slab-on-Grade (Baseline Damage)",
+    "upfrontCostMin": 0,
+    "upfrontCostMax": 0,
+    "annualInsuranceReductionPctMin": 0,
+    "annualInsuranceReductionPctMax": 0,
+    "avoidedDamagePerEventMin": 10000,
+    "avoidedDamagePerEventMax": 50000,
+    "notes": "Baseline for comparing avoided damage; represents high recurring losses without mitigation."
+  },
+  {
+    "item": "Elevated Slab (5 ft above grade)",
+    "upfrontCostMin": 60000,
+    "upfrontCostMax": 80000,
+    "annualInsuranceReductionPctMin": 0.10,
+    "annualInsuranceReductionPctMax": 0.25,
+    "avoidedDamagePerEventMin": 5000,
+    "avoidedDamagePerEventMax": 25000,
+    "notes": "Improved, but may not withstand future elevated flood levels. Moderate ROI."
+  },
+  {
+    "item": "Piers/Columns (10 ft above grade)",
+    "upfrontCostMin": 40000,
+    "upfrontCostMax": 65000,
+    "annualInsuranceReductionPctMin": 0.20,
+    "annualInsuranceReductionPctMax": 0.40,
+    "avoidedDamagePerEventMin": 1000,
+    "avoidedDamagePerEventMax": 10000,
+    "notes": "Significant protection. Strong Positive ROI."
+  },
+  {
+    "item": "Pilings (15 ft above grade, V-zones)",
+    "upfrontCostMin": 70000,
+    "upfrontCostMax": 120000,
+    "annualInsuranceReductionPctMin": 0.30,
+    "annualInsuranceReductionPctMax": 0.50,
+    "avoidedDamagePerEventMin": 0,
+    "avoidedDamagePerEventMax": 5000,
+    "notes": "Ideal for V-zones, high-velocity water. Very Strong Positive ROI."
+  },
+  {
+    "item": "Amphibious Foundation",
+    "upfrontCostMin": 15000,
+    "upfrontCostMax": 60000,
+    "annualInsuranceReductionPctMin": 0,
+    "annualInsuranceReductionPctMax": 0,
+    "avoidedDamagePerEventMin": 0,
+    "avoidedDamagePerEventMax": 5000,
+    "notes": "Adapts to rising water; currently NFIP Ineligible (no insurance reduction benefit)."
+  },
+  {
+    "item": "Add Flood Vents (per unit)",
+    "upfrontCostMin": 220,
+    "upfrontCostMax": 260,
+    "annualInsuranceReductionPctMin": 0.05,
+    "annualInsuranceReductionPctMax": 0.10,
+    "avoidedDamagePerEventMin": 2000,
+    "avoidedDamagePerEventMax": 10000,
+    "notes": "Low cost, quick payback, reduces pressure damage."
+  },
+  {
+    "item": "Install Breakaway Walls (project cost est.)",
+    "upfrontCostMin": 3000,
+    "upfrontCostMax": 8000,
+    "annualInsuranceReductionPctMin": 0.05,
+    "annualInsuranceReductionPctMax": 0.10,
+    "avoidedDamagePerEventMin": 5000,
+    "avoidedDamagePerEventMax": 20000,
+    "notes": "Walls designed to fail; replacement cost not covered, but protects main structure."
+  },
+  {
+    "item": "Elevate Electrical Panel/HVAC",
+    "upfrontCostMin": 1500,
+    "upfrontCostMax": 2000,
+    "annualInsuranceReductionPctMin": 0.05,
+    "annualInsuranceReductionPctMax": 0.05,
+    "avoidedDamagePerEventMin": 500,
+    "avoidedDamagePerEventMax": 5000,
+    "notes": "Protects critical systems, quick payback."
+  },
+  {
+    "item": "Use Flood-Resistant Drywall (material difference)",
+    "upfrontCostMin": 0.55,
+    "upfrontCostMax": 0.70,
+    "annualInsuranceReductionPctMin": 0,
+    "annualInsuranceReductionPctMax": 0,
+    "avoidedDamagePerEventMin": 300,
+    "avoidedDamagePerEventMax": 850,
+    "notes": "Cost-effective, avoids drywall repair (per sq ft material difference)."
+  },
+  {
+    "item": "Use Closed-Cell Spray Foam (material difference)",
+    "upfrontCostMin": 1.0,
+    "upfrontCostMax": 1.6,
+    "annualInsuranceReductionPctMin": 0,
+    "annualInsuranceReductionPctMax": 0,
+    "avoidedDamagePerEventMin": 500,
+    "avoidedDamagePerEventMax": 2000,
+    "notes": "Cost-effective, avoids insulation/mold issues (per sq ft material difference)."
+  }
+]
