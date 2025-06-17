@@ -1,0 +1,22 @@
+[
+  { "featureName": "Slab-on-Grade (lowest floor at or below current grade)", "category": "Foundation", "scoreImpact": -35, "notes": "Highly vulnerable to all flood types." },
+  { "featureName": "Crawlspace (vented, lowest floor at or below current BFE)", "category": "Foundation", "scoreImpact": -5, "notes": "Vulnerable, but allows water passage; requires flood-resistant materials." },
+  { "featureName": "Raised Slab (lowest floor 1-3 ft above current BFE)", "category": "Foundation", "scoreImpact": 40, "notes": "Improved, but may not withstand future elevated flood levels." },
+  { "featureName": "Piers/Columns (lowest floor 5-10 ft above current BFE)", "category": "Foundation", "scoreImpact": 60, "notes": "Significant protection, good for A/AE zones." },
+  { "featureName": "Pilings (lowest floor 10+ ft above current BFE, deep anchorage)", "category": "Foundation", "scoreImpact": 85, "notes": "Ideal for V-zones, high-velocity water, unstable soils." },
+  { "featureName": "Amphibious Foundation (dynamic elevation)", "category": "Foundation", "scoreImpact": 90, "notes": "Adapts to rising water; currently not NFIP-eligible, which is a significant barrier." },
+
+
+  { "featureName": "Flood Vents (properly sized and installed for enclosed spaces)", "category": "Mitigation", "scoreImpact": 8, "notes": "Essential for pressure equalization in Zone A enclosures; can lower insurance." },
+  { "featureName": "Breakaway Walls (in V-zones)", "category": "Mitigation", "scoreImpact": 8, "notes": "Designed to fail; replacement cost not covered by flood insurance for the wall itself, but protects main structure." },
+  { "featureName": "Elevated Mechanical Systems (HVAC, electrical, water heater above projected FBFE)", "category": "Mitigation", "scoreImpact": 12, "notes": "Protects critical infrastructure, aids rapid recovery." },
+  { "featureName": "Dry Floodproofing (non-residential, shallow floods, watertight)", "category": "Mitigation", "scoreImpact": 15, "notes": "Not allowed in V-zones; effective only for limited flood depths. (Assumed non-residential context)." },
+  { "featureName": "Wet Floodproofing (non-habitable spaces, flood-resistant materials)", "category": "Mitigation", "scoreImpact": 7, "notes": "Allows water in, reduces pressure; for non-living areas." },
+  
+  { "featureName": "Standard Drywall, Fiberglass Batt, Carpet", "category": "Materials", "scoreImpact": -15, "notes": "Highly susceptible to damage, mold, and contamination." },
+  { "featureName": "Moisture/Mold-Resistant Drywall, Closed-Cell Spray Foam, Ceramic/Vinyl Tile", "category": "Materials", "scoreImpact": 15, "notes": "Resists water damage, easier to clean, inhibits mold." },
+  { "featureName": "Stainless Steel/Hot-Dip Galvanized Connectors/Fasteners", "category": "Materials", "scoreImpact": 5, "notes": "Prevents corrosion and structural degradation." },
+
+  { "featureName": "Graded Landscape, French Drains, Swales", "category": "Site Drainage", "scoreImpact": 8, "notes": "Directs water away from foundation, reduces pooling." },
+  { "featureName": "Permeable Paving, Rain Gardens, Green Roofs", "category": "Site Drainage", "scoreImpact": 8, "notes": "Reduces surface runoff, alleviates strain on municipal drainage." }
+]
