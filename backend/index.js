@@ -7,7 +7,7 @@ import simulationRoutes from './routes/simulationRoutes.js'
 
 // connectToDatabase()
 const app = express()
-const port = process.env.PORT || 5001
+const port = process.env.PORT || 5002
 
 app.use(bodyParser.json()); 
 app.use(cors())

@@ -1,4 +1,4 @@
-// src/App.js
+// src/ClimateAdaptiveTool.js
 import React, { useState } from 'react';
 import {
   Box,
@@ -29,13 +29,13 @@ import {
   Th,
   Td,
   TableContainer,
-  Tag,        // <-- Import Tag
-  HStack,     // <-- Import HStack
-  Wrap,       // <-- Import Wrap for tag layout
-  WrapItem,   // <-- Import WrapItem
+  Tag,
+  HStack,
+  Wrap,
+  WrapItem,
   useToast,
 } from '@chakra-ui/react';
-import { CheckCircleIcon, WarningIcon, CloseIcon } from '@chakra-ui/icons'; // <-- Import CloseIcon for tags
+import { CheckCircleIcon, WarningIcon, CloseIcon } from '@chakra-ui/icons';
 
 // --- Hardcoded Options from resilienceFeatures.json for Dropdowns ---
 const FOUNDATION_OPTIONS = [
@@ -63,13 +63,13 @@ const MITIGATION_OPTIONS = [
   "Permeable Paving, Rain Gardens, Green Roofs",
 ];
 
-const API_ENDPOINT = 'http://localhost:5001/api/simulations';
+const API_ENDPOINT = 'http://localhost:5002/api/simulations'; // Ensure this matches your backend API URL (e.g., 3000, not 5002)
 
-function Home() {
+function Home() { // Renamed from 'Home' for clarity in app structure
   const [foundationType, setFoundationType] = useState('');
   const [elevationHeight, setElevationHeight] = useState('');
-  const [materials, setMaterials] = useState([]); // Array for multi-select
-  const [floodMitigationFeatures, setFloodMitigationFeatures] = useState([]); // Array for multi-select
+  const [materials, setMaterials] = useState([]);
+  const [floodMitigationFeatures, setFloodMitigationFeatures] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const [results, setResults] = useState(null);
@@ -126,7 +126,6 @@ function Home() {
     }
   };
 
-  // Helper to remove a tag if user clicks CloseIcon on it
   const handleRemoveMaterial = (materialToRemove) => {
     setMaterials(materials.filter((material) => material !== materialToRemove));
   };
@@ -185,16 +184,15 @@ function Home() {
                 <FormLabel>Materials (Flood-Vulnerable Areas)</FormLabel>
                 <Select
                   placeholder="Select materials (multi-select)"
-                  value={materials} // Value prop for controlled component
+                  value={materials}
                   onChange={(e) => {
                     const selectedValues = Array.from(e.target.selectedOptions, option => option.value);
                     setMaterials(selectedValues);
                   }}
-                  multiple // Enable multi-select
-                  height="100px" // Give some height for multiple selections
+                  multiple
+                  height="100px"
                 >
                   {MATERIAL_OPTIONS.map((option) => (
-                    // Add 'selected' attribute dynamically for multi-select visual state
                     <option key={option} value={option} selected={materials.includes(option)}>
                       {option}
                     </option>
@@ -203,7 +201,6 @@ function Home() {
                 <Text fontSize="sm" color="gray.500" mt={1}>
                   Select materials used in areas potentially exposed to flooding.
                 </Text>
-                {/* Display selected materials as tags */}
                 <Wrap mt={2}>
                   {materials.map((material) => (
                     <WrapItem key={material}>
@@ -220,16 +217,15 @@ function Home() {
                 <FormLabel>Flood Mitigation Features</FormLabel>
                 <Select
                   placeholder="Select mitigation features (multi-select)"
-                  value={floodMitigationFeatures} // Value prop for controlled component
+                  value={floodMitigationFeatures}
                   onChange={(e) => {
                     const selectedValues = Array.from(e.target.selectedOptions, option => option.value);
                     setFloodMitigationFeatures(selectedValues);
                   }}
-                  multiple // Enable multi-select
-                  height="150px" // Give some height for multiple selections
+                  multiple
+                  height="150px"
                 >
                   {MITIGATION_OPTIONS.map((option) => (
-                    // Add 'selected' attribute dynamically for multi-select visual state
                     <option key={option} value={option} selected={floodMitigationFeatures.includes(option)}>
                       {option}
                     </option>
@@ -238,7 +234,6 @@ function Home() {
                 <Text fontSize="sm" color="gray.500" mt={1}>
                   Choose features installed for flood protection.
                 </Text>
-                {/* Display selected mitigation features as tags */}
                 <Wrap mt={2}>
                   {floodMitigationFeatures.map((feature) => (
                     <WrapItem key={feature}>
@@ -275,37 +270,22 @@ function Home() {
               <Stat>
                 <StatLabel fontSize="lg">Overall Resilience Score (2055)</StatLabel>
                 <StatNumber
-                fontSize="5xl"
-                color={results.overallResilienceScore > 50 ? 'green.500' : 'red.500'}
+                  fontSize="5xl"
+                  color={results.overallResilienceScore >= 80 ? 'green.500' : results.overallResilienceScore >= 50 ? 'orange.500' : 'red.500'}
                 >
-                {results.overallResilienceScore}%
+                  {results.overallResilienceScore}%
                 </StatNumber>
-
                 <StatHelpText>
                   {results.overallResilienceScore >= 80 ? 'Excellent resilience!' :
                    results.overallResilienceScore >= 50 ? 'Moderate resilience, consider improvements.' :
                    'Low resilience, significant adaptations needed.'}
                 </StatHelpText>
               </Stat>
-              {/* <Stat>
-                <StatLabel fontSize="lg">Projected Net ROI</StatLabel>
-                <StatNumber fontSize="3xl" color={results.costBenefitAnalysis.upfrontCostEstimate > 0 && results.costBenefitAnalysis.longTermSavingsEstimate < results.costBenefitAnalysis.upfrontCostEstimate ? "red.500" : "green.500"}>
-                    {results.costBenefitAnalysis.longTermSavingsEstimate - results.costBenefitAnalysis.upfrontCostEstimate >= 0 ? `+$${(results.costBenefitAnalysis.longTermSavingsEstimate - results.costBenefitAnalysis.upfrontCostEstimate).toLocaleString()}` : `-$${Math.abs(results.costBenefitAnalysis.longTermSavingsEstimate - results.costBenefitAnalysis.upfrontCostEstimate).toLocaleString()}`}
-                </StatNumber>
-                <StatHelpText>{results.costBenefitAnalysis.roiDescription}</StatHelpText>
-              </Stat> */}
             </StatGroup>
-            {/* <HStack mb={6} spacing={8}>
-                <Stat>
-                    <StatLabel>Estimated Upfront Cost</StatLabel>
-                    <StatNumber>${results.costBenefitAnalysis.upfrontCostEstimate.toLocaleString()}</StatNumber>
-                </Stat>
-                <Stat>
-                    <StatLabel>Estimated Long-Term Savings</StatLabel>
-                    <StatNumber>${results.costBenefitAnalysis.longTermSavingsEstimate.toLocaleString()}</StatNumber>
-                </Stat>
-            </HStack> */}
-
+            
+          
+            
+         
 
             <Divider my={6} />
 
@@ -345,7 +325,6 @@ function Home() {
                 results.adaptiveRecommendations.map((rec, index) => (
                   <ListItem key={index}>
                     <ListIcon as={CheckCircleIcon} color="green.500" />
-                    {/* Use dangerouslySetInnerHTML if the LLM output might contain formatting like bold */}
                     <Text as="span" dangerouslySetInnerHTML={{ __html: rec }} />
                   </ListItem>
                 ))
@@ -353,6 +332,36 @@ function Home() {
                 <Text>No specific recommendations generated for this design.</Text>
               )}
             </List>
+            <Divider my={6} />
+            
+            <Heading as="h3" size="md" mb={4} color="teal.600">
+                Cost-Benefit Analysis
+            </Heading>
+            <Text fontSize="md" mb={4} fontWeight="bold">
+                {results.costBenefitAnalysis.roiDescription}
+            </Text>
+
+            <List spacing={2} mb={4}>
+                <Text fontWeight="semibold" mb={2}>Upfront Cost Breakdown:</Text>
+                {results.costBenefitAnalysis.upfrontCostBreakdown.map((item, index) => (
+                    <ListItem key={`upfront-${index}`}>
+                        <ListIcon as={CheckCircleIcon} color="blue.500" />
+                        {item}
+                    </ListItem>
+                ))}
+            </List>
+
+            <List spacing={2} mb={4}>
+                <Text fontWeight="semibold" mb={2}>Long-Term Savings Breakdown:</Text>
+                {results.costBenefitAnalysis.longTermSavingsBreakdown.map((item, index) => (
+                    <ListItem key={`savings-${index}`}>
+                        <ListIcon as={CheckCircleIcon} color="green.500" />
+                        {item}
+                    </ListItem>
+                ))}
+            </List>
+
+
           </Box>
         )}
       </VStack>
@@ -360,4 +369,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Home; 
