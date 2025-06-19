@@ -63,7 +63,7 @@ const MITIGATION_OPTIONS = [
   "Permeable Paving, Rain Gardens, Green Roofs",
 ];
 
-const API_ENDPOINT = 'http://localhost:5002/api/simulations'; // Ensure this matches your backend API URL (e.g., 3000, not 5002)
+const API_ENDPOINT = 'https://climate-adaptive-architecture-tool.vercel.app/api/simulations'; // Ensure this matches your backend API URL (e.g., 3000, not 5002)
 
 function Home() { // Renamed from 'Home' for clarity in app structure
   const [foundationType, setFoundationType] = useState('');
@@ -181,7 +181,7 @@ function Home() { // Renamed from 'Home' for clarity in app structure
               </FormControl>
 
               <FormControl id="materials" isRequired>
-                <FormLabel>Materials (Flood-Vulnerable Areas)</FormLabel>
+                <FormLabel>Materials (use cmd to select multiple)</FormLabel>
                 <Select
                   placeholder="Select materials (multi-select)"
                   value={materials}
@@ -214,7 +214,7 @@ function Home() { // Renamed from 'Home' for clarity in app structure
               </FormControl>
 
               <FormControl id="mitigation-features" isRequired>
-                <FormLabel>Flood Mitigation Features</FormLabel>
+                <FormLabel>Flood Mitigation Features(use cmd to select multiple)</FormLabel>
                 <Select
                   placeholder="Select mitigation features (multi-select)"
                   value={floodMitigationFeatures}
